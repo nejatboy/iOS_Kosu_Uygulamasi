@@ -33,7 +33,9 @@ class ViewController: UIViewController {
         
         konumIzniKontrolu()
         
-        //Deneme 
+        //Deneme
+        
+        //Deneme 2
     }
     
     
