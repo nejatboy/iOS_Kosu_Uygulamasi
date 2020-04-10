@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,74 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UygulamaKos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jwa-ar-rbl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="545.33333333333337"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSe-Vb-Y6c">
+                                <rect key="frame" x="155.66666666666666" y="812" width="102.99999999999997" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jnL-HF-hk0"/>
+                                </constraints>
+                                <state key="normal" title="Koşmaya Başla"/>
+                                <connections>
+                                    <action selector="buttonKosmayaBasla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QfR-Qa-oep"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="NaU-Z7-clP">
+                                <rect key="frame" x="20" y="545.33333333333337" width="374" height="266.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hız" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qY7-LZ-nU0">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Süre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ex-pR-Zqu">
+                                        <rect key="frame" x="0.0" y="89" width="35.333333333333336" height="88.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mesafe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0z3-GR-ffv">
+                                        <rect key="frame" x="0.0" y="177.66666666666663" width="56" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tSe-Vb-Y6c" secondAttribute="bottom" constant="20" id="C09-ZX-m6t"/>
+                            <constraint firstItem="NaU-Z7-clP" firstAttribute="top" secondItem="jwa-ar-rbl" secondAttribute="bottom" id="LqL-aE-ADH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jwa-ar-rbl" secondAttribute="trailing" id="RqB-Ti-IEb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NaU-Z7-clP" secondAttribute="trailing" constant="20" id="TxC-ll-nX0"/>
+                            <constraint firstItem="jwa-ar-rbl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZGh-R0-1Ey"/>
+                            <constraint firstItem="tSe-Vb-Y6c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="azK-j9-uAm"/>
+                            <constraint firstItem="jwa-ar-rbl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eGN-VH-Cx3"/>
+                            <constraint firstItem="NaU-Z7-clP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="isT-Dc-rdJ"/>
+                            <constraint firstItem="tSe-Vb-Y6c" firstAttribute="top" secondItem="NaU-Z7-clP" secondAttribute="bottom" id="tLA-5S-PDs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="height" secondItem="jwa-ar-rbl" secondAttribute="height" multiplier="1.5" id="zWT-EW-Cpv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonKosmayaBasla" destination="tSe-Vb-Y6c" id="csD-rJ-IoK"/>
+                        <outlet property="labelHiz" destination="qY7-LZ-nU0" id="Tlj-Le-B03"/>
+                        <outlet property="labelMesafe" destination="0z3-GR-ffv" id="Xms-Pu-fo2"/>
+                        <outlet property="labelSure" destination="3Ex-pR-Zqu" id="Skp-eL-Et0"/>
+                        <outlet property="mapView" destination="jwa-ar-rbl" id="UzB-ke-qhh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
 </document>
